@@ -1,0 +1,113 @@
+main() =>runApp(myApp());
+
+class myApp extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return MaterialApp(
+      title: "ChapterFourCode",
+      home: Scaffold(
+
+        appBar:AppBar(
+          title: Text("ChapterFourCode"),
+        ),
+        body: ChapterFour(),
+      ),
+    );
+  }
+}
+
+class ChapterFour extends StatefulWidget{
+  @override
+  State<StatefulWidget> createState() {
+    // TODO: implement createState
+    return MyHomePage();
+  }
+}
+
+class MyHomePage extends State<ChapterFour>{
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+        Text(
+          "这是最外层的Column",
+          style: TextStyle(
+            fontSize: 30,
+            color: Colors.blue,
+          ),
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Text(
+              "这是第一个Row",
+              style: TextStyle(
+                fontSize: 25,
+                color: Colors.blue,
+              ),
+            ),
+            Icon(
+              Icons.watch,
+              color: Colors.green,
+              size: 50,
+            )
+          ],
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              "这是第二个Row",
+              style: TextStyle(
+                fontSize: 25,
+                color: Colors.blue,
+              ),
+            ),
+            Icon(
+              Icons.phone_android,
+              color: Colors.green,
+              size: 50,
+            )
+          ],
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            Text(
+              "这是第三个Row",
+              style: TextStyle(
+                fontSize: 25,
+                color: Colors.blue,
+              ),
+            ),
+            Icon(
+              Icons.star,
+              color: Colors.green,
+              size: 50,
+            )
+          ],
+        ),
+        Image(
+            image:NetworkImage("https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.jj20.com%2Fup%2Fallimg%2F1114%2F123020113951%2F201230113951-2-1200.jpg&refer=http%3A%2F%2Fimg.jj20.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1656141696&t=a6ada87ef23c80bcd6e5d2d771e4730e")
+        ),
+        SizedBox(
+          width: 70,
+          height: 70,
+          child:DecoratedBox(
+            decoration: BoxDecoration(color: Colors.blue),
+            child: Text(
+              "这里是SizedBox",
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 15,
+              ),
+            ),
+          )
+        )
+      ],
+    );
+  }
+}
