@@ -1,0 +1,115 @@
+main() =>runApp(MyApp());
+
+class MyApp extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return MaterialApp(
+      title: "AboutFlex",
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text(
+            "FlexCode",
+            style: TextStyle(
+              fontSize: 30,
+              color: Colors.white,
+            ),
+          ),
+        ),
+        body: MyPageOne(),
+      ),
+    );
+  }
+}
+
+class MyPageOne extends StatefulWidget{
+  @override
+  State<StatefulWidget> createState() {
+    // TODO: implement createState
+    return Mypage();
+  }
+}
+class Mypage extends State<MyPageOne>{
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Column(
+      children: <Widget>[
+        Flex(
+          direction: Axis.horizontal,
+          children:[
+            Expanded(
+              flex: 9,
+              child: Container(
+                height: 30.0,
+                color: Colors.yellowAccent,
+              ),
+            ),
+            Expanded(
+              flex: 9,
+              child: Container(
+                height: 30.0,
+                color: Colors.green,
+              ),
+            ),
+          ],
+        ),
+        Padding(
+          padding: const EdgeInsets.only(top: 20.0),
+          child: SizedBox(
+            height: 100.0,
+            child: Flex(
+              direction: Axis.vertical,
+              children: <Widget>[
+                Expanded(
+                  flex: 1,
+                  child: Container(
+                    height: 30.0,
+                    color: Colors.red,
+                  ),
+                ),
+                Spacer(
+                  flex: 1,
+                ),
+                Expanded(
+                  flex: 1,
+                  child: Container(
+                    height: 30.0,
+                    color: Colors.blue,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+        Wrap(
+          spacing: 12.0, // 主轴(水平)方向间距
+          runSpacing: 8.0, // 纵轴（垂直）方向间距
+          alignment: WrapAlignment.center, //沿主轴方向居中
+          children: <Widget>[
+            Chip(
+              avatar: CircleAvatar(backgroundColor: Colors.blue, child: Text('A')),
+              label: Text('努力'),
+            ),
+            Chip(
+              avatar: CircleAvatar(backgroundColor: Colors.blue, child: Text('B')),
+              label: Text('奋斗'),
+            ),
+            Chip(
+              avatar: CircleAvatar(backgroundColor: Colors.blue, child: Text('C')),
+              label: Text('拼搏'),
+            ),
+            Chip(
+              avatar: CircleAvatar(backgroundColor: Colors.blue, child: Text('D')),
+              label: Text('顽强'),
+            ),
+            Chip(
+              avatar: CircleAvatar(backgroundColor: Colors.blue, child: Text('E')),
+              label: Text('躺平'),
+            ),
+          ],
+        ),
+      ],
+    );
+  }
+}
